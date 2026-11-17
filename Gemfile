@@ -1,9 +1,11 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
 
 # gem "rails"
 
-gem "colorize"
+gem 'colorize'
 
 group :development, :test do
-  gem "rubocop", require: false
+  gem 'rubocop', require: false
 end
