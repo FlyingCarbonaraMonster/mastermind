@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
-require_relative 'lib/colors'
+require_relative 'lib/board'
 require_relative 'lib/feedback'
 
-p Feedback.evaluate(%w[R B G Y], %w[R B G Y])
-p Feedback.evaluate(%w[R B G Y], %w[O O C C])
-p Feedback.evaluate(%w[R B G Y], %w[Y G B R])
-p Feedback.evaluate(%w[R B G Y], %w[R R R R])
-p Feedback.evaluate(%w[R B R G], %w[B R Y R])
-puts Colors.format_code(%w[R B G Y O C])
+secret = %w[R B G Y]
+board = Board.new
+guess1 = %w[O O C C]
+board.add_turn(guess1, Feedback.evaluate(secret, guess1))
+guess2 = %w[R Y G O]
+board.add_turn(guess2, Feedback.evaluate(secret, guess2))
+guess3 = %w[R G B Y]
+board.add_turn(guess3, Feedback.evaluate(secret, guess3))
+board.display
