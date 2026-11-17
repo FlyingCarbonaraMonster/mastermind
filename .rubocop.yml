@@ -1,5 +1,5 @@
 AllCops:
-  NewCops: Enable
+  NewCops: enable
 
 Style/Documentation:
   Enabled: false
