@@ -19,7 +19,13 @@ class ComputerPlayer < Player
 
   # Return a possible code, chosen randomly from the array of valid codes
   def make_guess
-    puts "#{name} is thinking..."
+    print "#{name} is thinking"
+    3.times do
+      sleep(0.5)
+      print '.'
+    end
+    sleep(0.5)
+    puts
     @possible_codes.sample
   end
 
